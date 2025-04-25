@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#003366</color>
+    <color name="selectedgreen">#019E5D</color>
+    <color name="primaryVariant">#002147</color>
+    <color name="Aollo_green">#019e93</color>
+    <color name="apolla_green1">#09C547</color>
+    <color name="Aollo_green1">#31E498</color>
+   <color name="bg1">#B8E5D0</color>
+    <color name="accent22">#ECEBEF</color>
+    <color name="accent23">#9C93B4</color>
+
+    <color name="soft_grey">#F0F0F0</color>
+
+    <color name="lightblue">#ADD8E6</color>
+
+    <color name="dialog_background_color3">#E8F5E9</color>
+    <color name="dialog_background_color5">#73949A</color>
+
+
+
+   <color name="apollo">#238277</color>
+    <color name="secondary">#FF6600</color>
+    <color name="secondaryVariant">#FF6600</color>
+    <color name="accent">#C0C0C0</color>
+ <color name="text">#1C2C30</color>
+ <color name="accent1">#EAEAEA</color>
+    <color name="bg_color">#F5F5F5</color>
+    <color name="success_color">#4CAF50</color>
+    <color name="success_color1">#6DC370</color>
+    <color name="warning">#FFC107</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="bottomcolor_nev">#444250</color>
+    <color name="bottomcolor_nev1">#B8E5D0</color>
+    <color name="primaryVariant1">#262d53</color>
+    <color name="primaryVariant2">#1C1B27</color>
+    <color name="primaryVariant3">#111823</color>
+    <color name="primaryVariant4">#272835</color>
+     <color name="fav">#22424d</color>
+
+    <color name="grey1">#b6b6b6</color>
+    <color name="fav3">#BAC8D3</color>
+
+    <color name="trs1">#80000000</color>
+
+    <color name="fav1">#e8e8f9</color>
+    <color name="fav4">#238277</color>
+    <color name="light_gray1">#A0A0A0</color>
+    <color name="medium_gray">#A0A0A0</color>
+    <color name="grey">#A0A0A0</color>
+    <color name="dark_gray">#666666</color>
+
+    <color name="dark_gray1">#4A4A4A</color>
+    <color name="dark_gray3">#616161</color>
+
+    <color name="light_gray3">#9E9E9E</color>
+    <color name="light_gray4">#C7C3C3</color>
+
+
+    <color name="unknown_strength_password1">#A9A38C</color>
+
+
+
+
+
+    <color name="very_weak_password">#FF0000</color>
+    <color name="weak_password">#FF6B6B</color>
+    <color name="moderate_password">#FFA500</color>
+    <color name="strong_password">#4CAF50</color>
+    <color name="very_strong_password">#008000</color>
+    <color name="unknown_strength_password">#808080</color>
+
+    <color name="ripple_color">#74598E</color>
+    <color name="indicator">#766978</color>
+
+    <color name="dark_red">#CA0000</color>
+    <color name="red">#F02E00</color>
+
+
+
+</resources>

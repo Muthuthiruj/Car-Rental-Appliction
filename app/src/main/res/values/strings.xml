@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CarRental</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="very_weak">Very weak</string>
+    <string name="weak">Weak</string>
+    <string name="moderate">Moderate</string>
+    <string name="strong">Strong</string>
+    <string name="very_strong">Very Strong</string>
+    <string name="unknown_strength"> </string>
+    <string name="sign_in"><u>Sign in !</u></string>
+    <string name="register_now"><u>Register Now</u></string>
+    <string name="google_maps_key">AIzaSyBkwnnskBRqNYeO0SzrivqDiDhKpDsxO_g</string>
+    <string name="descrpit">    To view pricing and start a reservation online for the Corvette, begin by choosing one of the select locations below. The actual model you\'ll receive is subject to availability, but the class includes these vehicles: Chevrolet Corvette or similar. To rent an exotic vehicle, driver must meet the following requirements: minimum age 25, valid driver’s license, major credit card. Fully transferable insurance must be verified. Rental costs and additional security deposits are taken at time of rental. Security deposits vary depending on vehicle selection.</string>
+</resources>

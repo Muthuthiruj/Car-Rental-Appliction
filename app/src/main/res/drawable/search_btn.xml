@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background Oval Shape -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/fav4"/>
+        </shape>
+    </item>
+
+    <!-- Foreground Drawable (Example: an image or icon) -->
+    <item android:drawable="@drawable/search"
+        android:top="10dp"
+        android:start="10dp"
+        android:bottom="10dp"
+        android:end="10dp"/>
+
+</layer-list>

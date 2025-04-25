@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <!-- Offer Card Layout -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/banner_bg"
+            android:padding="15dp">
+
+            <!-- Offer Title -->
+            <TextView
+                android:id="@+id/tvOffer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Offer Start Today"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bannerImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.0" />
+
+            <!-- Offer Description -->
+            <TextView
+                android:id="@+id/tvOfferField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Save 20% Off on First Booking!"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bannerImage"
+                app:layout_constraintTop_toBottomOf="@id/tvOffer"
+                app:layout_constraintHorizontal_bias="0.0" />
+
+            <!-- Booking Now Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_bg"
+                android:text="Book Now"
+                android:textColor="@android:color/holo_green_dark"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:textAllCaps="false"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOfferField"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Resized Lottie Animation -->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bannerImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:lottie_rawRes="@raw/firstbooking_anim" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/trendingCarfragment">
+
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.carrental.view.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.carrental.view.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.carrental.view.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/fragment_auth">
+        <action
+            android:id="@+id/action_authFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.carrental.view.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.carrental.view.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.carrental.view.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+
+    <fragment
+        android:id="@+id/trendingCarfragment"
+        android:name="com.example.carrental.view.TrendingCarfragment"
+        android:label="TrendingCarfragment"
+        tools:layout="@layout/fragment_trending_carfragment">
+       <!-- <action
+            android:id="@+id/action_trendingCarfragment_to_bookingItemFragment"
+            app:destination="@id/bookingItemFragment" />-->
+        <action
+            android:id="@+id/action_trendingCarfragment_to_carDetailFragment"
+            app:destination="@id/carDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.carrental.view.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_trendingCarfragment"
+            app:destination="@id/trendingCarfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingItemFragment"
+        android:name="com.example.carrental.view.SplashBookingItemFragment"
+        android:label="fragment_booking_item"
+        tools:layout="@layout/fragment_splash_bookingitem" >
+        <action
+            android:id="@+id/action_bookingItemFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.carrental.view.MapFragment"
+        tools:layout="@layout/fragment_map"
+        android:label="MapFragment" >
+        <action
+            android:id="@+id/action_mapFragment_to_bookingItemFragment"
+            app:destination="@id/bookingItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.example.carrental.view.BookingFragment"
+        tools:layout="@layout/fragment_booking"
+        android:label="BookingFragment" />
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.example.carrental.view.ReviewsFragment"
+        android:label="ReviewsFragment"
+        tools:layout="@layout/fragment_review"/>
+    <fragment
+        android:id="@+id/featuresFragment"
+        android:name="com.example.carrental.view.FeaturesFragment"
+        android:label="fragment_features2"
+        tools:layout="@layout/fragment_features" />
+    <fragment
+        android:id="@+id/pricePlanFragment"
+        android:name="com.example.carrental.view.PricePlanFragment"
+        android:label="PricePlanFragment"
+        tools:layout="@layout/fragment_price_plan"/>
+    <fragment
+        android:id="@+id/carDetailFragment"
+        android:name="com.example.carrental.view.CarDetailFragment"
+        android:label="CarDetailFragment"
+        tools:layout="@layout/fragment_car_detail">
+        <action
+            android:id="@+id/action_carDetailFragment_to_featuresFragment"
+            app:destination="@id/featuresFragment" />
+        <action
+            android:id="@+id/action_carDetailFragment_to_pricePlanFragment"
+            app:destination="@id/pricePlanFragment" />
+        <action
+            android:id="@+id/action_carDetailFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roughFragment"
+        android:name="com.example.carrental.view.RoughFragment"
+        android:label="fragment_rough"
+        tools:layout="@layout/fragment_rough" />
+    <fragment
+        android:id="@+id/exampleFragment"
+        android:name="com.example.carrental.view.ExampleFragment"
+        android:label="ExampleFragment"
+        tools:layout="@layout/fragment_example"/>
+
+
+</navigation>
