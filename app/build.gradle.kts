@@ -118,9 +118,7 @@ dependencies {
     //map
     implementation ("com.google.android.gms:play-services-maps:18.2.0")
     implementation ("com.google.android.libraries.places:places:3.4.0")
-
-
- /*   implementation("in.shadowfax:proswipebutton:1.2.0")*/
+    /*   implementation("in.shadowfax:proswipebutton:1.2.0")*/
    /* implementation ("com.ncorti:slidetoact:0.11.0")*/
 
 
@@ -130,6 +128,21 @@ dependencies {
 
     implementation ("com.github.skydoves:expandablelayout:1.0.7")
 
+//    implementation ("com.braintreepayments:card-form:3.1.1")
+
+
+        implementation ("com.github.KunikaValecha:CreditCardView:1.0") // replace with actual latest version
+
+    implementation ("com.android.support:support-core-utils:28.0.0")
+
+    //  Api
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
+
+
+    // Update both OkHttp and logging-interceptor to the same version
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0") // Ensure same version
 
 
 

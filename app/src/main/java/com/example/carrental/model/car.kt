@@ -52,4 +52,5 @@ class Car(
         override fun createFromParcel(parcel: Parcel): Car = Car(parcel)
         override fun newArray(size: Int): Array<Car?> = arrayOfNulls(size)
     }
+
 }

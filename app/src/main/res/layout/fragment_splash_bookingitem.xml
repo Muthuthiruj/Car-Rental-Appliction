@@ -611,13 +611,13 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
-
         android:layout_marginEnd="20dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"

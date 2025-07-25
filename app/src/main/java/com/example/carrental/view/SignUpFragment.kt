@@ -1,6 +1,7 @@
 package com.example.carrental.view
 
-import android.content.SharedPreferences
+import android.content.Context
+import android.content.SharedPreferences // Not used in this snippet, but was in your original. Keep if needed.
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,7 @@ class SignUpFragment : Fragment() {
 
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
-    private lateinit var sharedPreferences: SharedPreferences
+    // private lateinit var sharedPreferences: SharedPreferences // Uncomment if you actually use this
     private lateinit var auth: FirebaseAuth
 
     // Callback reference to switch tabs
@@ -26,15 +27,14 @@ class SignUpFragment : Fragment() {
     ): View {
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
-
-
-    override fun onAttach(context: android.content.Context) {
+    override fun onAttach(context: Context) { // Changed to android.content.Context for clarity
         super.onAttach(context)
         // Try to obtain the callback from the parent fragment
-        tabSwitcher = parentFragment as? AuthTabSwitcher
+        if (parentFragment is AuthTabSwitcher) {
+            tabSwitcher = parentFragment as AuthTabSwitcher
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,9 +49,7 @@ class SignUpFragment : Fragment() {
 
         // Set click listener for the "Switch to Login" TextView
         binding.switchlogin.setOnClickListener {
-            // Use the callback to switch to the "Sign In" tab (index 0)
-            tabSwitcher?.switchToTab(0)
-            // Remove the NavController navigation call if using tab switching exclusively
+            tabSwitcher?.switchToTab(0) // Switch to the "Sign In" tab (index 0)
         }
     }
 
@@ -78,7 +76,7 @@ class SignUpFragment : Fragment() {
                     if (task.isSuccessful) {
                         Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
                         // After successful registration, switch to the "Sign In" tab via callback
-                        tabSwitcher?.switchToTab(0)
+                        tabSwitcher?.switchToTab(0) // Redirect to the "Log_in" tab (index 0)
                     } else {
                         Toast.makeText(
                             requireContext(),
@@ -90,12 +88,9 @@ class SignUpFragment : Fragment() {
         }
     }
 
-
-
-
     override fun onDetach() {
         super.onDetach()
-        tabSwitcher = null
+        tabSwitcher = null // Clear the callback reference when the fragment is detached
     }
 
     override fun onDestroyView() {

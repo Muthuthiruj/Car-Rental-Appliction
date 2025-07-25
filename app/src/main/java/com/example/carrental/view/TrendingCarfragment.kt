@@ -3,6 +3,7 @@ package com.example.carrental.view
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -151,10 +152,16 @@ class TrendingCarfragment : Fragment() {
 
         adapter.onItemClick = { car ->
             val bundle = Bundle().apply {
-                putParcelable("selectedCar", car)
+                putParcelable("selected_car", car)
+                Log.d("CarDataCheck", "Attempting to send car: ${car.name}")
+                Log.d("CarDataCheck", "Full car details: $car")
             }
+
             findNavController().navigate(R.id.carDetailFragment, bundle)
         }
+
+
+
     }
 
     override fun onDestroyView() {

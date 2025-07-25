@@ -4,11 +4,9 @@ package com.example.carrental.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RadioButton
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carrental.R
+import com.example.carrental.databinding.LayoutPaymentMethodItemBinding
 import com.example.carrental.model.PaymentMethod
 
 class PaymentMethodAdapter(
@@ -18,34 +16,38 @@ class PaymentMethodAdapter(
 
     private var selectedPosition = -1
 
-    inner class PaymentMethodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val radioButton: RadioButton = itemView.findViewById(R.id.paymentMethodRadioButton)
-        val icon: ImageView = itemView.findViewById(R.id.paymentMethodIcon)
-        val name: TextView = itemView.findViewById(R.id.paymentMethodName)
+    inner class PaymentMethodViewHolder(
+        private val binding: LayoutPaymentMethodItemBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-        init {
-            itemView.setOnClickListener {
-                handleSelection(adapterPosition)
-            }
+        fun bind(paymentMethod: PaymentMethod, isSelected: Boolean) {
+            binding.apply {
+                paymentMethodIcon.setImageResource(paymentMethod.iconResId)
+                paymentMethodName.text = paymentMethod.name
+                paymentMethodRadioButton.isChecked = isSelected
 
-            radioButton.setOnClickListener {
-                handleSelection(adapterPosition)
+                root.setOnClickListener {
+                    handleSelection(adapterPosition)
+                }
+
+                paymentMethodRadioButton.setOnClickListener {
+                    handleSelection(adapterPosition)
+                }
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PaymentMethodViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.layout_payment_method_item, parent, false)
-        return PaymentMethodViewHolder(view)
+        val binding = LayoutPaymentMethodItemBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return PaymentMethodViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: PaymentMethodViewHolder, position: Int) {
-        val paymentMethod = paymentMethods[position]
-
-        holder.icon.setImageResource(paymentMethod.iconResId)
-        holder.name.text = paymentMethod.name
-        holder.radioButton.isChecked = position == selectedPosition
+        holder.bind(paymentMethods[position], position == selectedPosition)
     }
 
     override fun getItemCount(): Int = paymentMethods.size

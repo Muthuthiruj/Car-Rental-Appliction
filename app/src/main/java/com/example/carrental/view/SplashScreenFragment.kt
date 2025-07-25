@@ -30,7 +30,7 @@ class SplashScreenFragment : Fragment() {
 
         // Navigate to OnBoardingFragment after a delay of 3 seconds
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.onBoardingFragment)
+            findNavController().navigate(R.id.action_splashScreenFragment_to_onBoardingFragment)
         }, 3000)
     }
 

@@ -37,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:text="Customer Reviews"
                 android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
 
@@ -56,6 +57,7 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textSize="20sp"
+                    android:fontFamily="@font/montserrat_bold"
                     android:textStyle="bold"/>
 
                 <LinearLayout
@@ -82,6 +84,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Based on 128 reviews"
+                        android:fontFamily="@font/montserrat_medium"
                         android:textColor="@color/grey"
                         android:textSize="12sp"/>
                 </LinearLayout>
@@ -95,6 +98,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/primary"
                 android:text="Write a Review"
+                android:fontFamily="@font/montserrat_bold"
                 android:textAllCaps="false"
                 android:textColor="@color/white"/>
         </LinearLayout>

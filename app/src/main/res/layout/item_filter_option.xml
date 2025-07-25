@@ -16,6 +16,7 @@
         android:scaleType="fitCenter"
         android:padding="12dp"
         android:text="All"
+        android:fontFamily="@font/montserrat_medium"
         android:textSize="12sp"
         android:textStyle="bold"
         android:tint="@color/fav"

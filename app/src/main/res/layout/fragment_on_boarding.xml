@@ -20,7 +20,7 @@
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="22dp"/>
+            android:layout_marginBottom="50dp"/>
 
         <TextView
             android:id="@+id/prev_button"
@@ -36,18 +36,48 @@
             android:textColor="@color/accent"
             />
 
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="end|center_vertical"
+        >
         <TextView
-            android:id="@+id/next_button"
+            android:id="@+id/getStartedText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="16dp"
-            android:textColor="@color/white"
-            android:padding="15dp"
+            android:text="Get Started"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp"
-            android:text="Get Started" />
+            android:textSize="12sp"
+            android:textColor="@color/white"
+
+            android:paddingLeft="24dp"
+
+            android:paddingTop="12dp"
+            android:paddingBottom="16dp"
+
+            />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_animation_email"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_colorFilter="@color/white"
+            app:lottie_rawRes="@raw/progressright"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"/>
+    </LinearLayout>
 
         <TextView
             android:id="@+id/skip_button"
@@ -57,8 +87,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="16dp"
             android:padding="15dp"
-            android:textColor="@color/secondary"
-            android:layout_marginEnd="16dp"
+            android:textColor="@color/primary"
+            android:layout_marginEnd="14dp"
             android:text="Skip"
             android:textSize="20dp"
             android:textStyle="bold"/>

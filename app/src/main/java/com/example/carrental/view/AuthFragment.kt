@@ -4,18 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.findNavController
+import androidx.viewpager.widget.ViewPager
 import com.example.carrental.R
+import com.example.carrental.adapter.AuthPagerAdapter
 import com.example.carrental.databinding.FragmentAuthBinding
-import com.google.android.material.tabs.TabLayout
 
-class AuthFragment : Fragment(), AuthTabSwitcher {
+interface AuthTabSwitcher {
+    fun switchToTab(tabIndex: Int)
+}
+
+interface AuthNavigator {
+    fun navigateToHome()
+}
+class AuthFragment : Fragment(), AuthTabSwitcher ,AuthNavigator{
 
     private var _binding: FragmentAuthBinding? = null
     private val binding get() = _binding!!
-    private lateinit var fragmentManager: FragmentManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,52 +34,79 @@ class AuthFragment : Fragment(), AuthTabSwitcher {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fragmentManager = childFragmentManager
-        val tabLayout: TabLayout = binding.tabLayout
 
-        // Dynamically add tabs
-        tabLayout.addTab(tabLayout.newTab().setText("Sign In"))
-        tabLayout.addTab(tabLayout.newTab().setText("Sign Up"))
+        val viewPager = binding.viewPager
+        val tabSignIn = binding.tabSignIn
+        val tabSignUp = binding.tabSignUp
 
+        val adapter = AuthPagerAdapter(childFragmentManager)
+        viewPager.adapter = adapter
 
-        // Load the default fragment (SignInFragment)
-        replaceFragment(SignInFragment(), animate = false)
+        updateTabAppearance(0)
 
-        // Listen for tab selection changes
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                val fragment = when (tab?.position) {
-                    0 -> SignInFragment()
-                    else -> SignUpFragment()
-                }
-                replaceFragment(fragment, animate = true)
+        tabSignIn.setOnClickListener {
+            viewPager.currentItem = 0
+        }
+
+        tabSignUp.setOnClickListener {
+            viewPager.currentItem = 1
+        }
+
+        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+                // Not needed for this implementation
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) { }
-            override fun onTabReselected(tab: TabLayout.Tab?) { }
+            override fun onPageSelected(position: Int) {
+                updateTabAppearance(position)
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+                // Not needed for this implementation
+            }
         })
     }
 
-
-    private fun replaceFragment(fragment: Fragment, animate: Boolean) {
-        val transaction: FragmentTransaction = fragmentManager.beginTransaction()
-
-        if (animate) {
-            transaction.setCustomAnimations(
-                R.anim.slide_in_right,  // Enter animation
-                R.anim.slide_out_left,  // Exit animation
-                R.anim.slide_in_left,   // Pop enter animation (when navigating back)
-                R.anim.slide_out_right  // Pop exit animation (when navigating back)
-            )
-        }
-
-        transaction.replace(R.id.fragment_container, fragment)
-        transaction.commitAllowingStateLoss()
+    override fun switchToTab(tabIndex: Int) {
+        binding.viewPager.currentItem = tabIndex
     }
 
+    override fun navigateToHome() {
+        findNavController().navigate(R.id.action_authFragment_to_homeFragment)
+    }
+    private fun updateTabAppearance(selectedPosition: Int) {
+        val tabSignIn = binding.tabSignIn
+        val tabSignUp = binding.tabSignUp
+        val context = requireContext()
 
-    override fun switchToTab(tabIndex: Int) {
-        binding.tabLayout.getTabAt(tabIndex)?.select()
+        when (selectedPosition) {
+            0 -> {
+                // "Sign In" tab is selected
+                tabSignIn.setBackgroundResource(R.drawable.tab_selected_background)
+                tabSignIn.setTextColor(ContextCompat.getColor(context, R.color.white))
+                tabSignIn.setTextSize(16f) // Set the text size
+                tabSignIn.setTypeface(tabSignIn.typeface, android.graphics.Typeface.BOLD) // Set bold style
+
+                // "Sign Up" tab is unselected
+                tabSignUp.setBackgroundResource(android.R.color.transparent)
+                tabSignUp.setTextColor(ContextCompat.getColor(context, android.R.color.black))
+                tabSignUp.setTextSize(16f) // Set the text size
+                tabSignUp.setTypeface(tabSignUp.typeface, android.graphics.Typeface.NORMAL) // Set normal style
+            }
+            1 -> {
+                // "Sign In" tab is unselected
+                tabSignIn.setBackgroundResource(android.R.color.transparent)
+                tabSignIn.setTextColor(ContextCompat.getColor(context, android.R.color.black))
+                tabSignIn.setTextSize(16f)
+                tabSignIn.setTypeface(tabSignIn.typeface, android.graphics.Typeface.NORMAL)
+
+                // "Sign Up" tab is selected
+                tabSignUp.setBackgroundResource(R.drawable.tab_selected_background)
+                tabSignUp.setTextColor(ContextCompat.getColor(context, R.color.white))
+                tabSignUp.setTextSize(16f)
+                tabSignUp.setTypeface(tabSignUp.typeface, android.graphics.Typeface.BOLD)
+            }
+        }
     }
 
     override fun onDestroyView() {

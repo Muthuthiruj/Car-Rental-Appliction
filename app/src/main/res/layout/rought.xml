@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cardExpiryLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:hint="Expiry (MM/YY)"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/fav"
+            app:hintTextColor="@color/fav">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cardExpiryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:maxLength="5"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cardCvvLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:hint="CVV"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/fav"
+            app:hintTextColor="@color/fav">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cardCvvEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cardHolderNameLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Cardholder Name"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/fav"
+        app:hintTextColor="@color/fav">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cardHolderNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
+
+    &lt;!&ndash; PayPal Details (Initially Hidden) &ndash;&gt;
+<LinearLayout
+android:id="@+id/paypalDetailsLayout"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="16dp"
+android:orientation="vertical"
+android:visibility="gone"
+app:layout_constraintTop_toBottomOf="@id/paymentMethodsRecyclerView">
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/paypalEmailLayout"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="PayPal Email"
+    android:textColorHint="@color/white"
+    app:boxStrokeColor="@color/fav"
+    app:hintTextColor="@color/fav">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/paypalEmailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white" />
+</com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
+-->
+</androidx.constraintlayout.widget.ConstraintLayout>

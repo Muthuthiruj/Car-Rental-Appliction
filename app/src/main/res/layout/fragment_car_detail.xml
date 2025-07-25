@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/accent22"
-    >
+    android:id="@+id/parentLayout"
+    android:background="@color/accent22">
 
 
 
@@ -47,8 +47,8 @@
                     android:layout_marginTop="40dp"
                     android:text="Chevrolet Corvette"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="25sp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,8 +117,8 @@
                         android:layout_height="wrap_content"
                         android:text="Car Details"
                         android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/montserrat_bold"
                         android:textColor="@color/fav"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="10dp"
@@ -178,7 +178,7 @@
                 android:text="About the Car"
                 android:gravity="center"
                 android:textSize="12sp"
-                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/white"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/carview1" />
@@ -211,6 +211,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/fav3"
                     android:padding="16dp"
+                    android:fontFamily="@font/montserrat_medium"
                     android:text="@string/descrpit" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -225,6 +226,7 @@
             android:layout_marginTop="5dp"
             app:tabIndicatorFullWidth="true"
             app:tabGravity="fill"
+            android:fontFamily="@font/montserrat_bold"
             app:tabIndicatorHeight="5dp"
             app:tabRippleColor="@color/fav"
             android:background="#8022424D"
@@ -281,6 +283,7 @@
                 android:text="Rent Price"
                 android:textColor="@color/accent22"
                 android:textSize="14sp"
+                android:fontFamily="@font/montserrat_bold"
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -293,6 +296,7 @@
                 android:textColor="@color/accent22"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/montserrat_bold"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="5dp"
                 app:layout_constraintEnd_toStartOf="@id/carPrice"
@@ -308,7 +312,7 @@
                 android:text="570"
                 android:textColor="@color/accent22"
                 android:textSize="20sp"
-                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_bold"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="5dp"
                 app:layout_constraintEnd_toStartOf="@id/perdayTv"
@@ -321,8 +325,9 @@
                 android:layout_marginStart="15dp"
                 android:text="/day"
                 android:textColor="@color/fav3"
+                android:fontFamily="@font/montserrat_bold"
                 android:textSize="16sp"
-                android:textStyle="bold"
+
                 android:gravity="center"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -390,14 +395,14 @@
     </LinearLayout>
 
 
-    <include
+    <!--<include
         android:visibility="gone"
         android:id="@+id/contentSheet"
         layout="@layout/fragment_booking_form"
         android:layout_width="match_parent"
         android:layout_gravity="bottom"
         android:layout_height="wrap_content" />
-
+-->
 
 
 

@@ -16,6 +16,7 @@ class ReviewsFragment : Fragment() {
     private var _binding: FragmentReviewBinding? = null
     private val binding get() = _binding!!
 
+
     private lateinit var viewModel: ReviewViewModel
     private lateinit var adapter: ReviewAdapter
 

@@ -1,27 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fav"
-    android:fillViewport="true">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/accent22"
+    android:fillViewport="true"
+    android:paddingBottom="30dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <!-- Drag Handle -->
+        <View
+            android:id="@+id/drag_handle"
+            android:layout_width="50dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/fav3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Header Title -->
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Book This Car"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/drag_handle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Car Summary -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/carSummaryCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="15dp"
+            app:cardBackgroundColor="@color/fav3"
+            app:layout_constraintTop_toBottomOf="@id/headerTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/carThumbnail"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/display1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/carNameBooking"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Chevrolet Corvette"
+                    android:textColor="@color/fav"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserrat_bold"
+                    app:layout_constraintStart_toEndOf="@id/carThumbnail"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/priceBooking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="$120.00 / day"
+                    android:textColor="@color/black"
+                    android:alpha="0.5"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/carThumbnail"
+                    app:layout_constraintTop_toBottomOf="@id/carNameBooking" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bookingSummarycv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@drawable/home_card_opposit2"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carSummaryCard"
+            >
+
+            <TextView
+                android:id="@+id/bookingSummaryTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Booking Summary"
+                android:textColor="@color/white"
+               android:fontFamily="@font/montserrat_bold"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="200dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="12dp"
+                android:background="#A0AEC0"
+                android:alpha="0.7"
+                app:layout_constraintTop_toBottomOf="@id/bookingSummaryTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/carNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Car Name: Chevrolet Corvette"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#CBD5E0"
+                android:alpha="0.5"
+                app:layout_constraintTop_toBottomOf="@id/carNameTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/durationTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Duration: 0 Days"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider1" />
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#CBD5E0"
+                android:alpha="0.5"
+                app:layout_constraintTop_toBottomOf="@id/durationTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/basePriceTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Base Price: $0.00"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider2" />
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#CBD5E0"
+                android:alpha="0.5"
+                app:layout_constraintTop_toBottomOf="@id/basePriceTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/addonsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Add-ons: $0.00"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider3" />
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#CBD5E0"
+                android:alpha="0.5"
+                app:layout_constraintTop_toBottomOf="@id/addonsTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/totalTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Total: $0.00"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider4"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         <!-- Personal Details Section -->
         <TextView
             android:id="@+id/personalDetailsTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:text="Personal Details"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textColor="@color/fav"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintTop_toBottomOf="@id/bookingSummarycv" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/fullNameLayout"
@@ -30,9 +264,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Full Name"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/fav"
-            app:hintTextColor="@color/fav"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:textColorHint="@color/dark_gray"
+            app:boxStrokeColor="@color/dark_gray"
+            app:hintTextColor="@color/dark_gray"
             app:layout_constraintTop_toBottomOf="@id/personalDetailsTitle">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -40,7 +276,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:textColor="@color/white" />
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="14dp"
+                android:textColor="@color/fav" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -50,17 +289,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="Email Address"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/fav"
-            app:hintTextColor="@color/fav"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColorHint="@color/dark_gray"
+            app:boxStrokeColor="@color/dark_gray"
+            app:hintTextColor="@color/dark_gray"
             app:layout_constraintTop_toBottomOf="@id/fullNameLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:fontFamily="@font/montserrat_medium"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/white" />
+                android:textColor="@color/fav" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -70,9 +313,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="Phone Number"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/fav"
-            app:hintTextColor="@color/fav"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColorHint="@color/dark_gray"
+            app:boxStrokeColor="@color/dark_gray"
+            app:hintTextColor="@color/dark_gray"
             app:layout_constraintTop_toBottomOf="@id/emailLayout">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -80,60 +324,86 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
-                android:textColor="@color/white" />
+                android:fontFamily="@font/montserrat_medium"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:textColor="@color/fav" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Driver's License Information -->
         <TextView
             android:id="@+id/licenseTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Driver's License Information"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/fav"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/phoneLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/phoneLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/licenseNumberLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <!-- Driver's License Information -->
+        <LinearLayout
+            android:id="@+id/licensedetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="License Number"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/fav"
-            app:hintTextColor="@color/fav"
+            android:orientation="horizontal"
+            android:weightSum="2"
             app:layout_constraintTop_toBottomOf="@id/licenseTitle">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/licenseNumberEditText"
-                android:layout_width="match_parent"
+            <!-- License Number -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/licenseNumberLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@color/white" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:hint="License Number"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColorHint="@color/dark_gray"
+                app:boxStrokeColor="@color/dark_gray"
+                app:hintTextColor="@color/dark_gray">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/licenseExpiryLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Expiry Date (MM/YY)"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/fav"
-            app:hintTextColor="@color/fav"
-            app:layout_constraintTop_toBottomOf="@id/licenseNumberLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/licenseNumberEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/fav"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/licenseExpiryEditText"
-                android:layout_width="match_parent"
+            <!-- Expiry Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/licenseExpiryLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="date"
-                android:textColor="@color/white" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_marginStart="4dp"
+                android:hint="Expiry Date (MM/YY)"
+                android:textColorHint="@color/dark_gray"
+                app:boxStrokeColor="@color/dark_gray"
+                app:hintTextColor="@color/dark_gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/licenseExpiryEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/fav"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
         <!-- Rental Dates -->
         <TextView
@@ -142,110 +412,134 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Rental Dates"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/fav"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/licenseExpiryLayout" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/pickupDateLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
+            app:layout_constraintTop_toBottomOf="@id/licensedetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <LinearLayout
+            android:id="@+id/pickupdetails"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="4dp"
-            android:hint="Pickup Date"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/fav"
-            app:hintTextColor="@color/fav"
-            app:layout_constraintEnd_toStartOf="@id/pickupTimeLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rentalDatesTitle"
-            app:layout_constraintWidth_percent="0.6">
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/rentalDatesTitle">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/pickupDateEditText"
-                android:layout_width="match_parent"
+            <!-- Pickup Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pickupDateLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:inputType="none"
-                android:textColor="@color/white" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:hint="Pickup Date"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColorHint="@color/dark_gray"
+                app:boxStrokeColor="@color/dark_gray"
+                app:hintTextColor="@color/dark_gray">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/pickupTimeLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="12dp"
-            android:hint="Time"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/fav"
-            app:hintTextColor="@color/fav"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/pickupDateLayout"
-            app:layout_constraintTop_toBottomOf="@id/rentalDatesTitle"
-            app:layout_constraintWidth_percent="0.4">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pickupDateEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:inputType="none"
+                    android:textColor="@color/fav"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/pickupTimeEditText"
-                android:layout_width="match_parent"
+            <!-- Pickup Time -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pickupTimeLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:inputType="none"
-                android:textColor="@color/white" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_marginStart="4dp"
+                android:hint="Time"
+                android:textColorHint="@color/dark_gray"
+                app:boxStrokeColor="@color/dark_gray"
+                app:hintTextColor="@color/dark_gray">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/returnDateLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pickupTimeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:inputType="none"
+                    android:textColor="@color/fav"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/returndetails"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="4dp"
-            android:hint="Return Date"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/fav"
-            app:hintTextColor="@color/fav"
-            app:layout_constraintEnd_toStartOf="@id/returnTimeLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pickupDateLayout"
-            app:layout_constraintWidth_percent="0.6">
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/pickupdetails">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/returnDateEditText"
-                android:layout_width="match_parent"
+            <!-- Return Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/returnDateLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:inputType="none"
-                android:textColor="@color/white" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:hint="Return Date"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColorHint="@color/dark_gray"
+                app:boxStrokeColor="@color/dark_gray"
+                app:hintTextColor="@color/dark_gray">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/returnTimeLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
-            android:hint="Time"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/fav"
-            app:hintTextColor="@color/fav"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/returnDateLayout"
-            app:layout_constraintTop_toBottomOf="@id/pickupTimeLayout"
-            app:layout_constraintWidth_percent="0.4">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/returnDateEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/fav"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/returnTimeEditText"
-                android:layout_width="match_parent"
+            <!-- Return Time -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/returnTimeLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:inputType="none"
-                android:textColor="@color/white" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:hint="Time"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColorHint="@color/dark_gray"
+                app:boxStrokeColor="@color/dark_gray"
+                app:hintTextColor="@color/dark_gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/returnTimeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/fav"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
         <!-- Additional Options -->
         <TextView
@@ -254,10 +548,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Additional Options"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textColor="@color/fav"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/returnDateLayout" />
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintTop_toBottomOf="@id/returndetails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/fullInsuranceCheckbox"
@@ -265,7 +562,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Full Insurance Coverage (+$25/day)"
-            android:textColor="@color/white"
+            android:textColor="@color/fav"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="12dp"
             app:layout_constraintTop_toBottomOf="@id/additionalOptionsTitle" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
@@ -273,7 +573,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="GPS Navigation (+$10/day)"
-            android:textColor="@color/white"
+            android:textColor="@color/fav"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="12dp"
             app:layout_constraintTop_toBottomOf="@id/fullInsuranceCheckbox" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
@@ -281,7 +584,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Child Seat (+$15/day)"
-            android:textColor="@color/white"
+            android:textColor="@color/fav"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="12dp"
             app:layout_constraintTop_toBottomOf="@id/gpsCheckbox" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
@@ -289,246 +595,75 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Additional Driver (+$20/day)"
-            android:textColor="@color/white"
+            android:textColor="@color/fav"
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:fontFamily="@font/montserrat_medium"
             app:layout_constraintTop_toBottomOf="@id/childSeatCheckbox" />
 
         <!-- Payment Methods Section -->
+        <LinearLayout
+            android:id="@+id/paymentlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/additionalDriverCheckbox">
         <TextView
             android:id="@+id/paymentMethodTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Payment Method"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textColor="@color/fav"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/additionalDriverCheckbox" />
+             />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/paymentMethodsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            tools:itemCount="4"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:listitem="@layout/layout_payment_method_item"
             app:layout_constraintTop_toBottomOf="@id/paymentMethodTitle" />
-
-        <!-- Credit Card Details (Initially Hidden) -->
-        <LinearLayout
-            android:id="@+id/creditCardDetailsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/paymentMethodsRecyclerView">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/cardNumberLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Card Number"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/fav"
-                app:hintTextColor="@color/fav">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/cardNumberEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:maxLength="16"
-                    android:textColor="@color/white" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/cardExpiryLayout"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:hint="Expiry (MM/YY)"
-                    android:textColorHint="@color/white"
-                    app:boxStrokeColor="@color/fav"
-                    app:hintTextColor="@color/fav">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/cardExpiryEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="date"
-                        android:maxLength="5"
-                        android:textColor="@color/white" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/cardCvvLayout"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_weight="1"
-                    android:hint="CVV"
-                    android:textColorHint="@color/white"
-                    app:boxStrokeColor="@color/fav"
-                    app:hintTextColor="@color/fav">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/cardCvvEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="numberPassword"
-                        android:maxLength="4"
-                        android:textColor="@color/white" />
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/cardHolderNameLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="Cardholder Name"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/fav"
-                app:hintTextColor="@color/fav">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/cardHolderNameEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/white" />
-            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
-        <!-- PayPal Details (Initially Hidden) -->
-        <LinearLayout
-            android:id="@+id/paypalDetailsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/paymentMethodsRecyclerView">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/paypalEmailLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="PayPal Email"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/fav"
-                app:hintTextColor="@color/fav">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/paypalEmailEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/white" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-        <!-- Booking Summary Section -->
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="24dp"
-            android:background="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/paymentMethodsRecyclerView" />
-
-        <TextView
-            android:id="@+id/bookingSummaryTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Booking Summary"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/divider" />
-
-        <TextView
-            android:id="@+id/carNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Car: Chevrolet Corvette"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bookingSummaryTitle" />
-
-        <TextView
-            android:id="@+id/durationTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Duration: 0 days"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/carNameTextView" />
-
-        <TextView
-            android:id="@+id/basePriceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Base Price: $0"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/durationTextView" />
-
-        <TextView
-            android:id="@+id/addonsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Add-ons: $0"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/basePriceTextView" />
-
-        <TextView
-            android:id="@+id/totalTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Total: $0"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addonsTextView" />
-
-        <!-- Complete Booking Button -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/completeBookingButton"
+        <Button
+            android:id="@+id/VerifyconfirminfoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:backgroundTint="@color/fav"
             android:padding="12dp"
-            android:text="Complete Booking"
+            android:text="Verify information"
+            android:fontFamily="@font/montserrat_bold"
             android:textAllCaps="false"
             android:textSize="18sp"
             app:cornerRadius="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/totalTextView" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/paymentlayout"/>
+        <include
+            android:id="@+id/creditCardPaymentContainer"
+            layout="@layout/fragment_creditcard_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/paymentlayout" />
 
+        <!-- PayPal Payment Container -->
+        <include
+            android:id="@+id/paypalPaymentContainer"
+            layout="@layout/fragment_pay_pal_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/creditCardPaymentContainer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

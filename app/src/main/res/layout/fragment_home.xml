@@ -15,11 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:background="@drawable/home_background"
-        app:layout_constraintVertical_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/menu"
@@ -62,7 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Welcome back!"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
@@ -77,7 +75,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="James Anderson"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginTop="2dp"
@@ -136,7 +134,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="5dp">
+            android:elevation="5dp"
+            android:paddingHorizontal="15dp">
 
 
             <TextView
@@ -146,339 +145,332 @@
                 android:text="Our Services"
                 android:textColor="@color/fav4"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:layout_marginTop="10dp"
-                android:layout_marginStart="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/parentClAutoRefill"
-                android:layout_width="wrap_content"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:elevation="2dp"
-                android:layout_marginStart="30dp"
-                app:layout_constraintEnd_toStartOf="@id/parentClScanRefill"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvService">
+                android:layout_marginTop="16dp"
 
-
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:id="@+id/services"
+                app:layout_constraintTop_toBottomOf="@+id/tvService">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/clAutoRefill"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:elevation="2dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/bg_light_primary"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp">
 
-                    <ImageView
-                        android:id="@+id/ivAutoRefill"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:elevation="1dp"
-                        android:src="@drawable/home_trending"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/parentClAutoRefill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toStartOf="@+id/parentClScanRefill"
+                        app:layout_constraintHorizontal_chainStyle="spread"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clAutoRefill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_light_primary"
+                            android:elevation="2dp"
+                            android:padding="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivAutoRefill"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/home_trending"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/fav"
+                                tools:ignore="ContentDescription" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Trending Brands"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/clAutoRefill" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/parentClScanRefill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toStartOf="@+id/parentClPayment"
+                        app:layout_constraintStart_toEndOf="@+id/parentClAutoRefill"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clScanRefill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_light_primary"
+                            android:elevation="2dp"
+                            android:padding="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivScanRefill"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/home_recomment"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/fav"
+                                tools:ignore="ContentDescription" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Recommended Car"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/clScanRefill" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/parentClPayment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:tint="@color/fav" />
+                        app:layout_constraintStart_toEndOf="@+id/parentClScanRefill"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clPayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_light_primary"
+                            android:elevation="2dp"
+                            android:padding="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivPayment"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/payment"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/fav"
+                                tools:ignore="ContentDescription" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Payment Options"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/clPayment" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/parentClOrder"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toStartOf="@+id/parentClDelivery"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/parentClAutoRefill">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clOrder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_light_primary"
+                            android:elevation="2dp"
+                            android:padding="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivOrder"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/home_autonomous"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/fav"
+                                tools:ignore="ContentDescription" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Check Order Status"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/clOrder" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/parentClDelivery"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toStartOf="@id/parentClAlert"
+                        app:layout_constraintStart_toEndOf="@id/parentClOrder"
+                        app:layout_constraintTop_toBottomOf="@id/parentClAutoRefill">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clDelivery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_light_primary"
+                            android:elevation="2dp"
+                            android:padding="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivDelivery"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/home_car_key"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/fav"
+                                tools:ignore="ContentDescription" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Delivery Options"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/clDelivery" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/parentClAlert"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/parentClDelivery"
+                        app:layout_constraintTop_toBottomOf="@id/parentClAutoRefill">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clAlert"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_light_primary"
+                            android:elevation="2dp"
+                            android:padding="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivAlert"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/alert_settings"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/fav"
+                                tools:ignore="ContentDescription" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Alert Settings"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/clAlert" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <TextView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:text="Trending Brands"
-                    android:textAlignment="center"
-                    android:layout_marginTop="3dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/clAutoRefill"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"/>
+
+            </com.google.android.material.card.MaterialCardView>
 
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/parentClScanRefill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="2dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="30dp"
-                app:layout_constraintEnd_toStartOf="@id/parentClPayment"
-                app:layout_constraintStart_toEndOf="@+id/parentClAutoRefill"
-                app:layout_constraintTop_toBottomOf="@id/tvService">
-
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/clScanRefill"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:elevation="2dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/bg_light_primary"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/ivScanRefill"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:elevation="1dp"
-                        android:src="@drawable/home_recomment"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:tint="@color/fav" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Recommented car"
-                    android:textAlignment="center"
-                    android:layout_marginTop="3dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/clScanRefill"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"/>
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/parentClPayment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:elevation="2dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                app:layout_constraintStart_toEndOf="@id/parentClScanRefill"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                app:layout_constraintTop_toBottomOf="@id/tvService">
-
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/clPayment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:elevation="2dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/bg_light_primary"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/ivPayment"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/payment"
-                        android:elevation="1dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:tint="@color/fav" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-                <TextView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:text="Payment Options"
-                    android:textAlignment="center"
-                    android:layout_marginTop="3dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/clPayment"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"/>
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/parentClOrder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="2dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="30dp"
-                app:layout_constraintEnd_toStartOf="@+id/parentClDelivery"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/parentClAutoRefill">
-
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/clOrder"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:elevation="2dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/bg_light_primary"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/ivOrder"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:elevation="1dp"
-                        android:src="@drawable/home_autonomous"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:tint="@color/fav" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-                <TextView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:text="Check Order Status"
-                    android:textAlignment="center"
-                    android:layout_marginTop="3dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/clOrder"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"/>
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/parentClDelivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="2dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="30dp"
-                app:layout_constraintEnd_toStartOf="@id/parentClAlert"
-                app:layout_constraintStart_toEndOf="@id/parentClOrder"
-                app:layout_constraintTop_toBottomOf="@id/parentClAutoRefill">
-
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/clDelivery"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:layout_marginTop="3dp"
-                    android:elevation="2dp"
-                    android:background="@drawable/bg_light_primary"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/ivDelivery"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/home_car_key"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:tint="@color/fav" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-                <TextView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:text="Delivery Options"
-                    android:textAlignment="center"
-                    android:layout_marginTop="3dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/clDelivery"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/parentClAlert"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="2dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/parentClDelivery"
-                app:layout_constraintTop_toBottomOf="@id/parentClAutoRefill">
-
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/clAlert"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:elevation="2dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/bg_light_primary"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/ivAlert"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:elevation="1dp"
-                        android:src="@drawable/alert_settings"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:tint="@color/fav" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-                <TextView
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:text="Alert Settings"
-                    android:textAlignment="center"
-                    android:layout_marginTop="3dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/clAlert"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"/>
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <TextView
                 android:id="@+id/tvViewPrescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
+                android:padding="10dp"
                 android:textColor="@color/accent22"
                 android:textSize="16sp"
                 android:layout_marginTop="20dp"
@@ -491,7 +483,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintBottom_toTopOf="@+id/clNearStore"
-                app:layout_constraintTop_toBottomOf="@id/parentClOrder"/>
+                app:layout_constraintTop_toBottomOf="@id/services"/>
 
             <View
                 android:id="@+id/viewAboveLocation"
@@ -512,8 +504,7 @@
                 android:id="@+id/clNearStore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
+
                 android:padding="10dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -589,15 +580,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
                 android:background="@drawable/white_bg"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/viewBelowLocation"
-                app:layout_constraintBottom_toBottomOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/viewBelowLocation">
 
                 <ImageView
                     android:id="@+id/ivCall"

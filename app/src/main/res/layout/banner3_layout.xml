@@ -57,7 +57,6 @@
             android:text="Don't Miss"
             android:textColor="@color/Aollo_green"
             android:textStyle="bold"
-            android:fontFamily="@font/iregular"
             android:textAllCaps="false"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#003366</color>
+    <color name="primary">#019e93</color>
+    <color name="primary2">#F02E00</color>
+    <color name="primary1">#003366</color>
+    <color name="main_page_bg">#E2E5DE</color>
     <color name="selectedgreen">#019E5D</color>
     <color name="primaryVariant">#002147</color>
     <color name="Aollo_green">#019e93</color>
@@ -9,6 +12,13 @@
    <color name="bg1">#B8E5D0</color>
     <color name="accent22">#ECEBEF</color>
     <color name="accent23">#9C93B4</color>
+
+    <color name="gray_500">#9E9E9E</color>
+    <color name="gray_600">#EEEEEE</color>
+    <color name="gray_601">#E2E2E2</color>
+    <color name="gray_800">#F0F0F0</color>
+    <color name="gray_900">#F8F8F8</color>
+    <color name="gray_700">#616161</color>
 
     <color name="soft_grey">#F0F0F0</color>
 
@@ -50,6 +60,7 @@
     <color name="medium_gray">#A0A0A0</color>
     <color name="grey">#A0A0A0</color>
     <color name="dark_gray">#666666</color>
+    <color name="trs11">#2D3748</color>
 
     <color name="dark_gray1">#4A4A4A</color>
     <color name="dark_gray3">#616161</color>
@@ -59,6 +70,7 @@
 
 
     <color name="unknown_strength_password1">#A9A38C</color>
+    <color name="btn_color">#69cac7</color>
 
 
 
@@ -68,7 +80,7 @@
     <color name="weak_password">#FF6B6B</color>
     <color name="moderate_password">#FFA500</color>
     <color name="strong_password">#4CAF50</color>
-    <color name="very_strong_password">#008000</color>
+    <color name="green_success">#4CAF50</color>
     <color name="unknown_strength_password">#808080</color>
 
     <color name="ripple_color">#74598E</color>
@@ -76,6 +88,10 @@
 
     <color name="dark_red">#CA0000</color>
     <color name="red">#F02E00</color>
+
+    <color name="colorPrimary">#607D8B</color>
+    <color name="colorPrimaryDark">#455A64</color>
+    <color name="colorAccent">#4CAF50</color>
 
 
 

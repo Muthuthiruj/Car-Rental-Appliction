@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/trendingCarfragment">
+    app:startDestination="@id/authFragment">
 
 
     <fragment
@@ -31,6 +31,11 @@
         android:label="AuthFragment"
         tools:layout="@layout/fragment_auth">
         <action
+            android:id="@+id/action_authFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/authFragment"
+            app:popUpToInclusive="true" />
+        <action
             android:id="@+id/action_authFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
         <action
@@ -45,7 +50,10 @@
         tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/signUpFragment"/>
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment"/>
 
 
     </fragment>
@@ -58,11 +66,7 @@
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
-    <activity
-        android:id="@+id/homeActivity"
-        android:name="com.example.carrental.view.HomeActivity"
-        android:label="activity_home"
-        tools:layout="@layout/activity_home" />
+
 
     <fragment
         android:id="@+id/trendingCarfragment"
@@ -137,6 +141,9 @@
         <action
             android:id="@+id/action_carDetailFragment_to_reviewsFragment"
             app:destination="@id/reviewsFragment" />
+        <action
+            android:id="@+id/action_carDetailFragment_to_bookingFormFragment"
+            app:destination="@id/bookingFormFragment"/>
     </fragment>
     <fragment
         android:id="@+id/roughFragment"
@@ -148,6 +155,25 @@
         android:name="com.example.carrental.view.ExampleFragment"
         android:label="ExampleFragment"
         tools:layout="@layout/fragment_example"/>
+    <fragment
+        android:id="@+id/bookingFormFragment"
+        android:name="com.example.carrental.view.BookingFormFragment"
+        android:label="BookingFormFragment"
+        tools:layout="@layout/fragment_booking_form">
+        <action
+            android:id="@+id/action_bookingFormFragment_to_creditcardPaymentFragment"
+            app:destination="@id/creditcardPaymentFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/creditcardPaymentFragment"
+        android:name="com.example.carrental.view.CreditcardPaymentFragment"
+        android:label="CreditcardPaymentFragment"
+        tools:layout="@layout/fragment_creditcard_payment"/>
+    <fragment
+        android:id="@+id/exReviewFragment"
+        android:name="com.example.carrental.view.ExReviewFragment"
+        android:label="ExReviewFragment"
+        tools:layout="@layout/fragment_ex_review"/>
 
 
 </navigation>
